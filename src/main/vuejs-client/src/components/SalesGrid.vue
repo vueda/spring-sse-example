@@ -34,8 +34,7 @@ export default {
       this.$sse('/sales/1/stream', { format: 'json' }).then(sse => {
   
         sse.subscribe('sales-event', (message) => {
-          console.log(message);
-
+          
           this.vendorSales.push({
             vendorName : message.vendor.vendorName,
             amountTotal : message.value,
